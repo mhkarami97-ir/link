@@ -132,6 +132,7 @@ html {
     line-height: $base-line-height;
     color: $header-text-color;
     transition: 0.1s ease-in-out;
+    margin-left: 20px;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -696,6 +697,7 @@ html {
 
   .sidebar {
     padding-left: 8px;
+    direction: rtl;
     transition: top 0.2s, display 0.2s;
 
     @include flex-sticky($header-height + 20px);
