@@ -4,10 +4,8 @@
 
 {%- assign post = item -%}
 
-{% assign date_format = site.yat.date_format | default: "%b %-d, %Y" %}
-<span class="post-meta">{{ post.date | date: date_format }}</span>
 <span>
-  <a class="post-link" href="{{ post.url | relative_url }}">
+  <a class="post-link" href="http://{{ post.title | escape }}">
     {{ post.title | escape }}
   </a>
 </span>
