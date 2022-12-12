@@ -236,10 +236,12 @@ html {
 
   .post-tags {
     padding-right: 150px;
+    direction: rtl;
+    text-align: right;
 
     .post-tag {
       display: inline-block;
-      margin: 0 12px 0 0;
+      margin: 5px 12px 0 0;
     }
   }
 }
