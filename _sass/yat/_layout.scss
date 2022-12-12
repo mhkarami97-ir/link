@@ -636,6 +636,8 @@ html {
     .post-tags {
       color: #999;
       padding-right: 280px;
+      direction: rtl;
+      text-align: right;
 
       @include media-query($on-palm) {
         padding-right: 0;
