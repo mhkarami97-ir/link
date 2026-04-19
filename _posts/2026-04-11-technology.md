@@ -1,0 +1,21 @@
+---
+title: تکنولوژی
+categories: [تکنولوژی]
+tags: [تکنولوژی]
+---
+
+### انگلیسی
+
+[opensource.microsoft.com](https://opensource.microsoft.com)  
+
+[ubuntudde.com](https://ubuntudde.com)  
+
+[jekyllthemes.io/free](https://jekyllthemes.io/free)  
+
+[draw.io](https://draw.io)  
+
+### فارسی
+
+[unitycorn.ir](https://unitycorn.ir)  
+
+[anzalweb.ir](https://anzalweb.ir)  
