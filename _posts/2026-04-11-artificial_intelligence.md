@@ -91,6 +91,16 @@ tags: [هوش_مصنوعی]
 
 [framenet.ai](https://framenet.ai)  
 
+[bolt.new](https://bolt.new)  
+
+[styles.refero.design](https://styles.refero.design)  
+
+[zed.dev](https://zed.dev)  
+
+[awesome-skills.com](https://awesome-skills.com)  
+
+[crossaitools.com](https://crossaitools.com)  
+
 ### فارسی
 
 [demo-llm.targoman.ir/translate](https://demo-llm.targoman.ir/translate)  
