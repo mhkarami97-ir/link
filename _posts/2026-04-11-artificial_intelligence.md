@@ -101,6 +101,10 @@ tags: [هوش_مصنوعی]
 
 [crossaitools.com](https://crossaitools.com)  
 
+[9router.com](https://9router.com)  
+
+[router.bynara.id](https://router.bynara.id)  
+
 ### فارسی
 
 [demo-llm.targoman.ir/translate](https://demo-llm.targoman.ir/translate)  

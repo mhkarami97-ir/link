@@ -51,6 +51,8 @@ tags: [برنامه_نویسی]
 
 [dev-docs.ir/dom](https://dev-docs.ir/dom)  
 
+[failory.com](https://failory.com)  
+
 ### فارسی
 
 [iranrepo.ir](https://iranrepo.ir)  
