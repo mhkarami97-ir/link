@@ -105,6 +105,8 @@ tags: [هوش_مصنوعی]
 
 [router.bynara.id](https://router.bynara.id)  
 
+[krea.ai](https://www.krea.ai/image/k2)  
+
 ### فارسی
 
 [demo-llm.targoman.ir/translate](https://demo-llm.targoman.ir/translate)  
