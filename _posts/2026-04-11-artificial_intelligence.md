@@ -107,6 +107,16 @@ tags: [هوش_مصنوعی]
 
 [krea.ai](https://www.krea.ai/image/k2)  
 
+[ernie.baidu.com](https://ernie.baidu.com)  
+
+[digen.ai](https://digen.ai)  
+
+[app.1min.ai](https://app.1min.ai)  
+
+[chat.mistral.ai](https://chat.mistral.ai)  
+
+[poe.com](https://poe.com)  
+
 ### فارسی
 
 [demo-llm.targoman.ir/translate](https://demo-llm.targoman.ir/translate)  
