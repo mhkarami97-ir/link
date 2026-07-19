@@ -117,6 +117,8 @@ tags: [هوش_مصنوعی]
 
 [poe.com](https://poe.com)  
 
+[zenmux.ai](https://zenmux.ai)  
+
 ### فارسی
 
 [demo-llm.targoman.ir/translate](https://demo-llm.targoman.ir/translate)  
