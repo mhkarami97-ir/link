@@ -17,6 +17,10 @@ tags: [تکنولوژی]
 
 [now.hackertab.dev](https://now.hackertab.dev)  
 
+[panx.io](https://panx.io/)  
+
+[nosignups.net](https://nosignups.net/)  
+
 ### فارسی
 
 [unitycorn.ir](https://unitycorn.ir)  
