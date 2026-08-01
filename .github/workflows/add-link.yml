@@ -1,0 +1,148 @@
+name: Add Link And Notify Telegram
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Website URL"
+        required: true
+        type: string
+      type:
+        description: "Category"
+        required: true
+        type: choice
+        options:
+          - artificial_intelligence
+          - blog
+          - book
+          - download
+          - github
+          - graphic
+          - movie
+          - music
+          - nature
+          - other
+          - podcast
+          - poem
+          - programming
+          - psychology
+          - science
+          - shop
+          - sport
+          - technology
+          - tool
+
+jobs:
+  process-link:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update markdown and prepare telegram message
+        id: prepare
+        uses: actions/github-script@v7
+        env:
+          INPUT_URL: ${{ github.event.inputs.url }}
+          INPUT_TYPE: ${{ github.event.inputs.type }}
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const inputUrl = process.env.INPUT_URL.trim();
+            const inputType = process.env.INPUT_TYPE.trim();
+
+            let parsedUrl;
+            try {
+              parsedUrl = new URL(inputUrl);
+            } catch (error) {
+              core.setFailed('Invalid URL');
+              return;
+            }
+
+            const postsDir = '_posts';
+            const files = fs.readdirSync(postsDir);
+            const targetFile = files.find(file => file.endsWith(`-${inputType}.md`));
+
+            if (!targetFile) {
+              core.setFailed(`No file found for type: ${inputType}`);
+              return;
+            }
+
+            const filePath = path.join(postsDir, targetFile);
+            const marker = '### فارسی';
+
+            const response = await fetch(`https://api.microlink.io?url=${encodeURIComponent(inputUrl)}&meta=true`);
+            if (!response.ok) {
+              core.setFailed('Metadata fetch failed');
+              return;
+            }
+
+            const payload = await response.json();
+            if (payload.status !== 'success') {
+              core.setFailed('Metadata service returned non-success status');
+              return;
+            }
+
+            const meta = payload.data || {};
+            const title = (meta.title || parsedUrl.hostname).trim();
+            const description = (meta.description || 'No description').trim();
+            const canonicalUrl = (meta.url || inputUrl).trim();
+            const hostname = parsedUrl.hostname.replace(/^www\./, '');
+
+            const insertLine = `[${hostname}](${canonicalUrl})  `;
+            const content = fs.readFileSync(filePath, 'utf8');
+
+            if (!content.includes(marker)) {
+              core.setFailed(`Marker not found in ${filePath}`);
+              return;
+            }
+
+            if (!content.includes(insertLine)) {
+              const updatedContent = content.replace(marker, `${insertLine}\n\n${marker}`);
+              fs.writeFileSync(filePath, updatedContent, 'utf8');
+            }
+
+            const telegramMessage = [
+              `🔥 ${title}`,
+              '',
+              `📝 ${description}`,
+              '',
+              `🔗 ${canonicalUrl}`,
+              '',
+              '#website',
+              '',
+              '📡 : @karam97_dev'
+            ].join('\n');
+
+            core.setOutput('file_path', filePath);
+            core.setOutput('telegram_message', telegramMessage);
+
+      - name: Commit changes
+        uses: test-room-7/action-update-file@v2
+        with:
+          file-path: ${{ steps.prepare.outputs.file_path }}
+          commit-msg: Add new link to ${{ github.event.inputs.type }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send Telegram message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MESSAGE: ${{ steps.prepare.outputs.telegram_message }}
+        run: |
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg chat_id "$TELEGRAM_CHAT_ID" \
+              --arg text "$MESSAGE" \
+              '{chat_id: $chat_id, text: $text}')"
