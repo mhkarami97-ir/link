@@ -21,6 +21,8 @@ tags: [تکنولوژی]
 
 [nosignups.net](https://nosignups.net/)  
 
+[supabase.com](https://supabase.com/)  
+
 ### فارسی
 
 [unitycorn.ir](https://unitycorn.ir)  
