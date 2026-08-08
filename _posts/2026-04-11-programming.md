@@ -53,6 +53,8 @@ tags: [برنامه_نویسی]
 
 [failory.com](https://failory.com)  
 
+[inferx.net](https://inferx.net/)  
+
 ### فارسی
 
 [iranrepo.ir](https://iranrepo.ir)  
