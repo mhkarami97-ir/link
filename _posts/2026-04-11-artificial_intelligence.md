@@ -119,6 +119,8 @@ tags: [هوش_مصنوعی]
 
 [zenmux.ai](https://zenmux.ai)  
 
+[meetily.ai](https://meetily.ai/)  
+
 ### فارسی
 
 [demo-llm.targoman.ir/translate](https://demo-llm.targoman.ir/translate)  
