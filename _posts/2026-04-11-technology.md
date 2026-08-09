@@ -25,6 +25,8 @@ tags: [تکنولوژی]
 
 [backgrounds.supply](https://backgrounds.supply/gradient-lab)  
 
+[namso-gen.com](https://namso-gen.com/)  
+
 ### فارسی
 
 [unitycorn.ir](https://unitycorn.ir)  
