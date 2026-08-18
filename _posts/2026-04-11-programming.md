@@ -55,6 +55,8 @@ tags: [برنامه_نویسی]
 
 [inferx.net](https://inferx.net/)  
 
+[statically.io](https://statically.io/)  
+
 ### فارسی
 
 [iranrepo.ir](https://iranrepo.ir)  
