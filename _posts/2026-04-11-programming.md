@@ -57,6 +57,8 @@ tags: [برنامه_نویسی]
 
 [statically.io](https://statically.io/)  
 
+[try.cloudflare.com](https://try.cloudflare.com/)  
+
 ### فارسی
 
 [iranrepo.ir](https://iranrepo.ir)  
