@@ -121,6 +121,8 @@ tags: [هوش_مصنوعی]
 
 [meetily.ai](https://meetily.ai/)  
 
+[stackviv.ai](https://stackviv.ai/)  
+
 ### فارسی
 
 [demo-llm.targoman.ir/translate](https://demo-llm.targoman.ir/translate)  
